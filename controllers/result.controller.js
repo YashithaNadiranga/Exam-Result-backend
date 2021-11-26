@@ -1,11 +1,11 @@
 const models = require ('../models');
-const ExamResult = models.ExamResult;
+const examr = models.examr;
 
 const getResult = async (req, res) => {
     const id = req.query.id;
-    const data = await ExamResult.findAll({
+    const data = await examr.findAll({
         where: {
-            sname: id
+            sid: id
           }
     });
     res.json({data:data});
